@@ -1,15 +1,16 @@
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+package com.example.helloworld;
 
-@Controller
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class HelloWorldController {
+
     private int counter = 0;
 
     @GetMapping("/")
-    public String helloWorld(Model model) {
+    public String helloWorld() {
         counter++;
-        model.addAttribute("message", "hello-world-" + counter);
-        return "hello";
+        return "hello-world-" + counter;
     }
 }
