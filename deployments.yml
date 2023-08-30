@@ -1,24 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp
+  name: bottom-line-deployment
 spec:
-  replicas: 5
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+  replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: bottom-line
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: bottom-line
     spec:
       containers:
-      - image: kammana/nodeapp:v2
-        name: nodeapp
-        ports:
-        - containerPort: 8080
+        - name: bottom-line-container
+          image: sharath71/sharath71-bottomline:bottomlinet3
+          ports:
+            - containerPort: 8080
