@@ -1,1 +1,12 @@
-ff
+apiVersion: v1
+kind: Service
+metadata:
+  name: bottom-line-service
+spec:
+  selector:
+    app: bottom-line
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: NodePort
