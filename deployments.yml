@@ -17,5 +17,5 @@ spec:
           image: sharath71/sharath71-bottomline:bottomlinet3
           ports:
             - containerPort: 8080
-            
+          
             
