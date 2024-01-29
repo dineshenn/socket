@@ -6,5 +6,7 @@ COPY pom.xml .
 
 COPY src/ /app/src/
 
+EXPOSE 8080
+
 CMD ["mvn", "spring-boot:run"]
 
